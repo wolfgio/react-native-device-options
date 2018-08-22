@@ -15,6 +15,10 @@ public class RNDeviceOptionsModule extends ReactContextBaseJavaModule {
     this.reactContext = reactContext;
   }
 
+  public void open() {
+    startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
+  }
+
   @Override
   public String getName() {
     return "RNDeviceOptions";
